@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhangzhe.mapper.UsersFansMapper">
+
+
+    <insert id="insertUserFans" parameterType="com.zhangzhe.pojo.UsersFans">
+        INSERT INTO `users_fans`
+        (`id`,
+         `user_id`,
+         `fan_id`)
+         VALUES (
+          #{id},
+          #{userId},
+          #{fanId}
+         )
+    </insert>
+
+    <delete id="deleteUserFans">
+        DELETE FROM `users_fans`
+        WHERE user_id = #{userId}
+        AND fan_id = #{fanId}
+    </delete>
+
+</mapper>

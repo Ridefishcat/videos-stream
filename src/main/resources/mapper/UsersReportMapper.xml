@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhangzhe.mapper.UsersReportMapper">
+
+    <insert id="insert">
+        INSERT INTO `users_report`
+        ( `id` ,
+          `deal_user_id` ,
+          `deal_video_id` ,
+          `title` ,
+          `content`,
+          `userid`,
+          `create_date`)
+          VALUES (
+          #{id},
+          #{dealUserId},
+          #{dealVideoId},
+          #{title},
+          #{content},
+          #{userid},
+          DATE_FORMAT(NOW(), '%Y-%m-%d %h:%i:%s')
+          )
+    </insert>
+
+</mapper>

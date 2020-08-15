@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhangzhe.mapper.UsersLikeVideosMapper">
+
+    <insert id="insert" parameterType="com.zhangzhe.pojo.UsersLikeVideos">
+        INSERT INTO `users_like_videos`
+        (`id` ,
+         `user_id` ,
+         `video_id`)
+         VALUES (
+         #{id},
+         #{userId},
+         #{videoId}
+         )
+    </insert>
+
+    <delete id="delete">
+        delete from
+        `users_like_videos`
+        where video_id = #{videoId}
+    </delete>
+
+    <select id="selectUsersLikeVideos" resultType="com.zhangzhe.pojo.UsersLikeVideos">
+        select *
+        from `users_like_videos`
+        WHERE user_id = #{userId}
+        AND video_id = #{videoId}
+    </select>
+
+</mapper>

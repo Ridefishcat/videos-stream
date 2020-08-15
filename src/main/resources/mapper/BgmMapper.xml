@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhangzhe.mapper.BgmMapper">
+
+    <insert id="insertBgm" parameterType="com.zhangzhe.pojo.Bgm">
+            INSERT INTO `bgm`
+            (`id` ,
+             `author`,
+             `name`,
+             `path`)
+             VALUES(#{id},
+                    #{author},
+                    #{name},
+                    #{path})
+    </insert>
+
+    <select id="queryList" resultType="com.zhangzhe.pojo.Bgm">
+        SELECT
+        *
+        FROM
+        `bgm`
+    </select>
+
+    <select id="queryBgmById" resultType="com.zhangzhe.pojo.Bgm">
+        SELECT
+        *
+        FROM
+        `bgm`
+        WHERE id=#{id}
+    </select>
+
+</mapper>
